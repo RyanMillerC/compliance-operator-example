@@ -23,7 +23,7 @@ $ oc get compliancescan -w -n openshift-compliance
 ### Check scan results
 
 ```bash
-$ oc get compliancecheckresults
+$ oc get compliancecheckresults -n openshift-compliance
 ```
 
 ## Scan With Auto Remediation
@@ -40,3 +40,36 @@ $ oc delete -f manifests/02-compliance-scan
 ```bash
 $ oc create -f manifests/03-compliance-remediation
 ```
+
+### Monitor compliance scan
+
+```bash
+$ oc get compliancescan -w -n openshift-compliance
+```
+
+### Check scan results
+
+```bash
+$ oc get compliancecheckresults -n openshift-compliance
+```
+
+### Force compliance Re-scan
+
+```bash
+$ oc annotate compliancescans/ocp4-cis compliance.openshift.io/rescan=
+$ oc annotate compliancescans/ocp4-cis-node-master compliance.openshift.io/rescan=
+$ oc annotate compliancescans/ocp4-cis-node-worker compliance.openshift.io/rescan=
+```
+
+### Monitor compliance scan
+
+```bash
+$ oc get compliancescan -w -n openshift-compliance
+```
+
+### Check scan results
+
+```bash
+$ oc get compliancecheckresults -n openshift-compliance
+```
+
