@@ -28,6 +28,8 @@ $ oc get compliancecheckresults -n openshift-compliance
 
 ## Scan With Auto Remediation
 
+**IMPORTANT: DON'T RUN THIS ON A CLUSTER YOU CARE ABOUT! IT WILL ENFORCE EVERYTHING!**
+
 **NOTE: If you scanned without remediation, delete the ScanSettingBinding
 with:**
 
